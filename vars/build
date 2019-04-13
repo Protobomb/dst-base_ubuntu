@@ -1,0 +1,4 @@
+export full_image_name="dst-base-ubuntu"
+export image_version='0.0.1'
+export image_registry=""
+
