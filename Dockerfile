@@ -20,6 +20,7 @@ RUN apt-get autoremove -y
 RUN rm -Rf /var/lib/{apt,dpkg,cache,log}/
 
 RUN useradd ${new_user} -d /home/${new_user}
-RUN usermod -aG sudo ${new_user}
+RUN usermod -aG sudo,${new_user} ${new_user}
+
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER ${new_user}
